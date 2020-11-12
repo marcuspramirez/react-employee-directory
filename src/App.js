@@ -1,9 +1,10 @@
 // Where you will build your app
 // Import is ES6
 import './App.css';
-import Bootstrap from './components/Bootstrap.js';
+import Namesearch from './components/Namesearch.js';
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
+import EmailSearch from "./components/Emailsearch"
 
 
 // In react this is a component which is a function that calls UI.  Once you start weaving a bunch of components together, you then have an interface!
@@ -13,7 +14,8 @@ function App() {
     <div>
       <Header />
       <Navbar/>
-      <Bootstrap/>
+      <Namesearch/>
+      <EmailSearch/>
       
     </div>
   )
