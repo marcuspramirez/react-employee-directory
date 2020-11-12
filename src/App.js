@@ -2,6 +2,7 @@
 // Import is ES6
 import './App.css';
 import Title from './Title';
+import Bootstrap from './Components/Bootstrap';
 
 
 // In react this is a component which is a function that calls UI.  Once you start weaving a bunch of components together, you then have an interface!
@@ -11,6 +12,7 @@ function App() {
     <div>
       <Title titleText="Welcome to the user directory!" />
       <h3>Use the search tools to find one of our amazing associates!</h3>
+      <Bootstrap/>
     </div>
   )
 }
