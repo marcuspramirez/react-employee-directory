@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // Only one ReactDOM.render.  This is the magic that forces the App.js File.  You can see above where it is imported - import App from './App';
