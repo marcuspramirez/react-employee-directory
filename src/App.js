@@ -4,7 +4,8 @@ import './App.css';
 import Namesearch from './components/Namesearch.js';
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-import EmailSearch from "./components/Emailsearch"
+import EmailSearch from "./components/Emailsearch";
+import FetchRandomUser from "./components/FetchRandomUser";
 
 
 // In react this is a component which is a function that calls UI.  Once you start weaving a bunch of components together, you then have an interface!
@@ -15,7 +16,15 @@ function App() {
       <Header />
       <Navbar/>
       <Namesearch/>
-      <EmailSearch/>
+      <EmailSearch/>     
+      <FetchRandomUser/>
+      <FetchRandomUser/>
+      <FetchRandomUser/>
+      <FetchRandomUser/>
+      <FetchRandomUser/>
+      <FetchRandomUser/>
+      <FetchRandomUser/>
+      <FetchRandomUser/>
       
     </div>
   )
