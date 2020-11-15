@@ -1,37 +1,59 @@
 // Where you will build your app
 // Import is ES6
+import React, { Component } from "react";
 import './App.css';
 import Namesearch from './components/Namesearch.js';
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
+import employees from "./employees.json";
+import Wrapper from "./components/Wrapper";
+import Title from "./components/Title";
+import FriendCard from "./components/FriendCard";
 import EmailSearch from "./components/Emailsearch";
-import FetchRandomUser from "./components/FetchRandomUser";
+
+// import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 
-// In react this is a component which is a function that calls UI.  Once you start weaving a bunch of components together, you then have an interface!
-// If you look at Title it is coming from Title.js where we have a title function that has a prop with <h1> element.  We exported it in the Title file and imported above
-function App() {
-  return (
-    <div>
-      <Header />
-      <Navbar/>
-      <Namesearch/>
-      <EmailSearch/>     
-      <FetchRandomUser/>
-      <FetchRandomUser/>
-      <FetchRandomUser/>
-      <FetchRandomUser/>
-      <FetchRandomUser/>
-      <FetchRandomUser/>
-      <FetchRandomUser/>
-      <FetchRandomUser/>
+
+class App extends Component {
+  // Setting this.state.employees to the employees json array
+  state = {
+    employees
+  };
+
+  removeEmployee = id => {
+    // Filter this.state.employees for employees with an id not equal to the id being removed
+    const employees = this.state.employees.filter(employee => employee.id !== id);
+    // Set this.state.employees equal to the new employees array
+    this.setState({ employees });
+  };
+
+ 
+
+  // Map over this.state.employees and render a FriendCard component for each friend object
+  render() {
+    return (
+      <Wrapper>
       
-    </div>
-  )
+      <Title>Use the Search Tools to Find an Employee!</Title>
+
+      <Namesearch/>
+      <EmailSearch/>
+   
+        
+        {this.state.employees.map(employee => (
+          <FriendCard
+            removeEmployee={this.removeEmployee}
+            id={employee.id}
+            key={employee.id}
+            firstname={employee.firstname}
+            lastname={employee.lastname}
+            image={employee.image}
+            email={employee.email}
+        
+          />
+        ))}
+      </Wrapper>
+    );
+  }
 }
 
-
-
-
-// You import things and you EXPORT things.  This is who you export the function above
 export default App;
