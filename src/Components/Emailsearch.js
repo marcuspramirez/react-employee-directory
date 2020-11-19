@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 
-function EmailSearch() {
+function EmailSearch(props) {
+    const inputRef = useRef(null);
     return (
         
         <div className="text-white">
             <div className="input-group-prepend">
-                    <input type="email" className="form-control" placeholder="Email"></input>
-                    <button onClick={() => console.log("Button Clicked!")}>Search</button>            
+                    <input ref={inputRef} type="email" className="form-control" placeholder="Email" />
+                    <button onClick={() => props.employeeNarrow(inputRef.current.value)}>Search</button>            
                 </div>
             </div>
        
@@ -14,3 +15,4 @@ function EmailSearch() {
 }
 
 export default EmailSearch;
+
