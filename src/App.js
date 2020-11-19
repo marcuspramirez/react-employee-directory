@@ -1,7 +1,6 @@
 
 import React, { Component } from "react";
 import './App.css';
-import Namesearch from './components/Namesearch.js';
 import employees from "./employees.json";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
@@ -26,13 +25,7 @@ class App extends Component {
   filterEmployee = (searchText) => {
     // Filter this.state.employees for employees with an id not equal to the id being removed
     const employeeSet = employees.filter(employee => {
-      // let isFound = false;
-      // Object.keys(employee).forEach(key => {
-      //   if(employee[key].includes(searchText)) {
-      //     isFound = true;
-      //   }
-      // });
-      // return isFound;
+      
       return  Object.keys(employee)
       .filter(key => key !== 'id')
       .some(key =>  employee[key].includes(searchText) ) //fancy es6 type way
@@ -42,8 +35,6 @@ class App extends Component {
   };
 
 
-
-
   // Map over this.state.employees and render a FriendCard component for each friend object
   render() {
     return (
@@ -51,7 +42,6 @@ class App extends Component {
 
         <Title>Use the Search Tools to Find an Employee!</Title>
 
-        <Namesearch />
         <EmailSearch employeeNarrow={this.filterEmployee} />
 
         {this.state.employees.map(employee => (
