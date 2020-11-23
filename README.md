@@ -23,4 +23,4 @@ https://marcuspramirez.github.io/react-employee-directory/
 
 ## Image
 
-![](public/images/directory-image.png)
+![](images/directory-image.png)
